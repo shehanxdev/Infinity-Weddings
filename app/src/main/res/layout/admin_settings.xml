@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal">
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Home"
+            android:src="@drawable/ic_baseline_home_24"
+            android:backgroundTint="#f29697"/>
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Category"
+            android:src="@drawable/ic_baseline_format_list_bulleted_24"
+            android:backgroundTint="#f29697"/>
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Settings"
+            android:src="@drawable/ic_baseline_search_24"
+            android:backgroundTint="#f29697"/>
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Settings"
+            android:src="@drawable/ic_baseline_settings_24"
+            android:backgroundTint="#007fff"/>
+    </LinearLayout>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="Settings"
+            android:fontFamily="@font/raleway"
+            android:textSize="30sp"
+            android:layout_marginTop="30dp"
+            android:textColor="@color/black"
+            android:textFontWeight="1000"/>
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="150dp"
+            android:paddingLeft="15dp">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/credentials"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/raleway"
+                    android:text="Credentials"
+                    android:textColor="@color/black"
+                    android:textFontWeight="600"
+                    android:textSize="20sp" />
+                <TextView
+                    android:id="@+id/usernamehead"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/credentials"
+                    android:fontFamily="@font/raleway"
+                    android:text="Username"
+                    android:textColor="@color/black"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"/>
+
+                <TextView
+                    android:id="@+id/usernamevalue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/credentials"
+                    android:layout_marginLeft="100dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:fontFamily="@font/raleway"
+                    android:text="John Wogg"
+                    android:textColor="@color/grey" />
+
+                <ImageButton
+                    android:id="@+id/edit_button_1"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_below="@id/credentials"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_toRightOf="@id/usernamevalue"
+                    android:backgroundTint="@color/white"
+                    android:fontFamily="@font/raleway"
+                    android:src="@drawable/ic_baseline_edit_24" />
+                <TextView
+                    android:id="@+id/passwordhead"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/usernamehead"
+                    android:fontFamily="@font/raleway"
+                    android:text="Password"
+                    android:textColor="@color/black"
+                    android:layout_marginTop="10dp"/>
+                <TextView
+                    android:id="@+id/passwordvalue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="100dp"
+                    android:layout_below="@id/usernamevalue"
+                    android:fontFamily="@font/raleway"
+                    android:text="**********"
+                    android:textColor="@color/grey"/>
+                <ImageButton
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/ic_baseline_edit_24"
+                    android:layout_below="@id/edit_button_1"
+                    android:layout_toRightOf="@id/usernamevalue"
+                    android:backgroundTint="@color/white"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="10dp"/>
+                <!-- app settings===============================================================-->
+                <TextView
+                    android:id="@+id/app_settings"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/passwordhead"
+                    android:layout_marginTop="30dp"
+                    android:fontFamily="@font/raleway"
+                    android:text="App Settings"
+                    android:textColor="@color/black"
+                    android:textFontWeight="600"
+                    android:textSize="20sp" />
+                <!--hidden categories===========================================================-->
+                <TextView
+                    android:id="@+id/hidden_categories"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/app_settings"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/raleway"
+                    android:text="Hidden Categories"
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:id="@+id/dancing_teams"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/app_settings"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_toRightOf="@id/hidden_categories"
+                    android:fontFamily="@font/raleway"
+                    android:text="Dancing teams"
+                    android:textColor="@color/black" />
+
+                <Button
+                    android:id="@+id/remove1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_below="@id/app_settings"
+                    android:layout_marginLeft="15dp"
+                    android:layout_toRightOf="@id/dancing_teams"
+                    android:backgroundTint="@color/white"
+                    android:fontFamily="@font/raleway"
+                    android:text="Remove"
+                    android:textColor="@color/red"
+                    android:textSize="10sp" />
+
+                <TextView
+                    android:id="@+id/dj"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/dancing_teams"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginTop="19dp"
+                    android:layout_toRightOf="@id/hidden_categories"
+                    android:fontFamily="@font/raleway"
+                    android:text="Dj Groups"
+                    android:textColor="@color/black" />
+                <Button
+                    android:id="@+id/remove2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_toRightOf="@id/dancing_teams"
+                    android:layout_below="@id/remove1"
+                    android:textSize="10sp"
+                    android:text="Remove"
+                    android:textColor="@color/red"
+                    android:layout_marginLeft="15dp"
+                    android:backgroundTint="@color/white"
+                    android:fontFamily="@font/raleway"/>
+                <!--Contact ==================================================-->
+                <TextView
+                    android:id="@+id/Contact"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/dj"
+                    android:layout_marginTop="30dp"
+                    android:fontFamily="@font/raleway"
+                    android:text="Contact Info"
+                    android:textColor="@color/black"
+                    android:textFontWeight="600"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/mobilehead"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/Contact"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/raleway"
+                    android:text="Mobile"
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:id="@+id/mobilevalue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/Contact"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_toRightOf="@id/mobilehead"
+                    android:fontFamily="@font/raleway"
+                    android:text="+94 77 4356576"
+                    android:textColor="@color/black" />
+                <ImageButton
+                    android:id="@+id/edit_button_3"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_below="@id/Contact"
+                    android:layout_marginLeft="18dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+
+                    android:layout_toRightOf="@id/mobilevalue"
+                    android:backgroundTint="@color/white"
+                    android:fontFamily="@font/raleway"
+                    android:src="@drawable/ic_baseline_edit_24" />
+
+                <TextView
+                    android:id="@+id/emailhead"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/mobilehead"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/raleway"
+                    android:text="Email"
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:id="@+id/emailevalue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/mobilevalue"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginBottom="10dp"
+
+                    android:layout_toRightOf="@id/mobilehead"
+                    android:fontFamily="@font/raleway"
+                    android:text="admin@gmail.com"
+                    android:textColor="@color/black" />
+                <ImageButton
+                    android:id="@+id/edit_button_4"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_below="@id/edit_button_3"
+                    android:layout_marginLeft="32dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_toRightOf="@id/mobilevalue"
+                    android:backgroundTint="@color/white"
+                    android:fontFamily="@font/raleway"
+                    android:src="@drawable/ic_baseline_edit_24" />
+            </RelativeLayout>
+        </ScrollView>
+    </FrameLayout>
+</LinearLayout>
