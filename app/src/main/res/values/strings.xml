@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Infinity Weddings</string>
+    <!--Common Strings-->
+    <string name="login">Log in</string>
+    <string name="Signup">Sign up</string>
+    <string name="singupWithGoogle">Sign in with google</string>
+    <!--Home page strings-->
+    <string name="homePageHead">All your wedding needs in \n one place</string>
+    <string name="homePageWelcome">Welcome</string>
+    <!--Login Page Strings-->
+    <string name="loginHintUsername">Username</string>
+    <string name="loginHintPassword">password</string>
+    <string name="loginWarningMessage">Log in is only to be used by the administrator</string>
+</resources>

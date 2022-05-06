@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="33dp"
+                android:fontFamily="@font/raleway"
+                android:gravity="center"
+                android:text="@string/homePageWelcome"
+                android:textColor="@color/black"
+                android:textFontWeight="800"
+                android:textSize="55sp" />
+
+            <TextView
+                android:id="@+id/subheading"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="35dp"
+                android:layout_marginBottom="20dp"
+                android:fontFamily="@font/raleway"
+                android:gravity="center"
+                android:text="@string/homePageHead"
+                android:textColor="@color/gold"
+                android:textSize="25sp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="224dp"
+                android:layout_marginTop="30dp"
+                android:src="@drawable/welcome"
+                android:contentDescription="LOGO" />
+
+            <Button
+                android:id="@+id/Login"
+                android:layout_width="143dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"
+                android:backgroundTint="@color/pink"
+                android:onClick="nextPage"
+                android:text="@string/login"
+                android:textColor="@color/white" />
+
+            <Button
+                android:id="@+id/Signup"
+                android:layout_width="143dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:backgroundTint="@color/pink"
+                android:text="@string/Signup"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="Or" />
+
+            <Button
+                android:id="@+id/SignupWithGoogle"
+                android:layout_width="246dp"
+                android:layout_height="57dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:backgroundTint="#ffffff"
+                android:drawableLeft="@drawable/log_in_with_google"
+                android:fontFamily="@font/roboto"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
+                android:text="@string/singupWithGoogle"
+                android:textColor="@color/black" />
+
+        </LinearLayout>
+
+</ScrollView>
