@@ -6,24 +6,18 @@ import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-
 public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        FirebaseDatabase firebaseDatabase=FirebaseDatabase.getInstance();
-        DatabaseReference databaseReference=firebaseDatabase.getReference("admin");
-        databaseReference.child("admin1").child("email").setValue("admin@example.com");
-        databaseReference.child("admin1").child("password").setValue("password");
+
 
     }
     public void nextPage(View view){
 
-        Intent intent=new Intent(getApplicationContext(), AdminLogin.class) ;
+        Intent intent=new Intent(getApplicationContext(), AdminLoginActivity.class) ;
         startActivity(intent);
 
     }

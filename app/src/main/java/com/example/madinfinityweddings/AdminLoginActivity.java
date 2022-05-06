@@ -19,12 +19,12 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 
-public class AdminLogin extends AppCompatActivity {
+public class AdminLoginActivity extends AppCompatActivity {
     Button loginButton;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.admin_login);
+        setContentView(R.layout.activity_admin_login);
         loginButton=(Button) findViewById(R.id.loginPageLogin);
         //onClick Listener for Login button
         loginButton.setOnClickListener(new View.OnClickListener() {
@@ -54,7 +54,7 @@ public class AdminLogin extends AppCompatActivity {
                 System.out.println(admin[0].email);
                 if(admin[0].password.equals(password)){
                     Toast.makeText(getApplicationContext(),"Login Successful",Toast.LENGTH_SHORT).show();
-                    Intent intent=new Intent(getApplicationContext(),MainActivity.class);
+                    Intent intent=new Intent(getApplicationContext(),AdminHomeActivity.class);
                     startActivity(intent);
                 }
                 else{

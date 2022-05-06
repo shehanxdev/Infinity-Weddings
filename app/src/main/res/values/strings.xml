@@ -11,4 +11,12 @@
     <string name="loginHintUsername">Username</string>
     <string name="loginHintPassword">password</string>
     <string name="loginWarningMessage">Log in is only to be used by the administrator</string>
+    <!--Admin Dashboard Bottom Nav Menu-->
+    <string name="adminDBoardBottomNavMenuHome">Home</string>
+    <string name="adminDBoardBottomNavMenuNotification">Notification</string>
+    <string name="adminDBoardBottomNavMenuCategories">Categories</string>
+    <string name="adminDBoardBottomNavMenuSettings">Settings</string>
+
+
+
 </resources>

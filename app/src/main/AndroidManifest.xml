@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name=".AdminLogin"/>
+        <activity android:name=".AdminLoginActivity"/>
         <activity
             android:name=".MainActivity"
             android:exported="true">
@@ -19,6 +19,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".AdminHomeActivity"/>
     </application>
 
 </manifest>
