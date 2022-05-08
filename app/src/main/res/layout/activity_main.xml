@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,19 +7,23 @@
     android:background="@drawable/background"
     tools:context=".MainActivity" >
 
-    <TextView
-        android:id="@+id/banner"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="50dp"
-        android:layout_marginBottom="50dp"
-        android:gravity="center"
-        android:text="Infinity Weddings"
-        android:textColor="@color/white"
-        android:textSize="35dp"
-        android:textStyle="bold" />
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/banner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="50dp"
+            android:layout_marginBottom="50dp"
+            android:gravity="center"
+            android:text="Infinity Weddings"
+            android:textColor="@color/white"
+            android:textSize="35dp"
+            android:textStyle="bold" />
 
     <TextView
         android:id="@+id/bannerDescription"
@@ -34,22 +38,22 @@
         android:rotationX="33"
         android:text="Plan your Wedding here"
         android:textColorLink="#8C3737"
-        android:textSize="15dp"
+        android:textSize="16dp"
         android:textStyle="bold" />
 
 
     <ImageView
         android:id="@+id/imageView_logo"
-        android:layout_width="213dp"
-        android:layout_height="372dp"
+        android:layout_width="326dp"
+        android:layout_height="394dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="100dp"
         android:adjustViewBounds="true"
         android:maxWidth="180dp"
         app:srcCompat="@drawable/iw_logo" />
 
 
-    <TextView
+  <!-- <TextView
         android:id="@+id/textView_main_head"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -58,29 +62,60 @@
         android:text="Welcome To Infinity Weddings"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Headline"
-        android:textStyle="italic" />
+        android:textColor="@android:color/background_dark"
+        android:textStyle="bold" /> -->
 
-    <Button
-        android:id="@+id/button_login"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="70dp"
-        android:layout_marginTop="545dp"
-        android:layout_marginRight="70dp"
-        android:backgroundTint="@color/design_default_color_secondary"
-        android:text="Login" />
+        <Button
+            android:id="@+id/button_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="80dp"
+            android:layout_marginTop="500dp"
+            android:layout_marginRight="80dp"
+            android:backgroundTint="@color/design_default_color_secondary"
+            android:text="Login" />
 
 
     <Button
         android:id="@+id/button_register"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="70dp"
-        android:layout_marginTop="610dp"
-        android:layout_marginRight="70dp"
+        android:layout_marginLeft="80dp"
+        android:layout_marginTop="565dp"
+        android:layout_marginRight="80dp"
         android:backgroundTint="@color/design_default_color_secondary"
         android:text="Register" />
 
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/socialIcons"
+        android:layout_below="@+id/button_register"
+        android:layout_marginTop="10dp"
+        android:layout_alignParentBottom="true"
+        android:gravity="center">
 
-</RelativeLayout>
+
+        <ImageView
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_margin="20dp"
+            android:src="@drawable/google"/>
+        <ImageView
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_margin="20dp"
+            android:src="@drawable/fb"/>
+        <ImageView
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_margin="20dp"
+            android:src="@drawable/twitter"/>
+
+    </LinearLayout>
+
+    </RelativeLayout>
+
+
+</ScrollView>

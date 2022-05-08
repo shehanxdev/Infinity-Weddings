@@ -15,17 +15,18 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         //set the title
-       // getSupportActionBar().setTitle("Infinity Weddings");
+      getSupportActionBar().setTitle("Infinity Weddings");
 
-      /*  //open Login Activity
+
+       //open Login Activity
         Button buttonLogin = findViewById(R.id.button_login);
         buttonLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //Intent intent = new Intent(MainActivity.this, LoginActivity.class);
-               // startActivity(intent);
+                Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+               startActivity(intent);
             }
-        });*/
+        });
 
         //open register activity
         Button buttonRegister = findViewById(R.id.button_register);
