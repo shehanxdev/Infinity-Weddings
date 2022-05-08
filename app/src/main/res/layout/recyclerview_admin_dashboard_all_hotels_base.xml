@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingLeft="15dp"
+    android:paddingRight="15dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/pink"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="20dp"
+        app:cardCornerRadius="15dp"
+        app:cardElevation="8dp"
+        android:onClick="updateHotel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+       <TextView
+           android:padding="25dp"
+           android:id="@+id/admin_dashboard_all_hotels_base_hotel_name"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:textColor="@color/white"
+           android:textSize="25dp"
+           android:textAlignment="center"
+           >
+
+       </TextView>
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

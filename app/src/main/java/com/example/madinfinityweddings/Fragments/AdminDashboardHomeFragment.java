@@ -7,40 +7,34 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
+import android.widget.TextView;
 
 import com.example.madinfinityweddings.R;
+import com.example.models.admin;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link AdminDashboardHomeFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class AdminDashboardHomeFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
+
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
-    // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-
+    private admin currentAdmin;
+    private TextView greeting;
+    private ImageButton viewHotelImageButton;
+    private AdminDashboardAllHotelsFragment adminDashboardAllHotels=new AdminDashboardAllHotelsFragment();
     public AdminDashboardHomeFragment() {
-        // Required empty public constructor
+
+    }
+    public AdminDashboardHomeFragment(admin currentAdmin){
+        this.currentAdmin=currentAdmin;
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment AdminDashboardHomeFragment.
-     */
-    // TODO: Rename and change types and number of parameters
     public static AdminDashboardHomeFragment newInstance(String param1, String param2) {
         AdminDashboardHomeFragment fragment = new AdminDashboardHomeFragment();
+
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -57,10 +51,26 @@ public class AdminDashboardHomeFragment extends Fragment {
         }
     }
 
+    private void setOnClickListeners(View view){
+        viewHotelImageButton=(ImageButton) view.findViewById(R.id.admin_dashboard_homefragment_tile1);
+        viewHotelImageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.adminDashboardFragmentContainer,adminDashboardAllHotels).commit();
+            }
+        });
+    }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_admin_dashboard_home, container, false);
+        View view= inflater.inflate(R.layout.fragment_admin_dashboard_home, container, false);
+        greeting=(TextView) view.findViewById(R.id.adminDashboardHomeGreeting);
+        greeting.setText("Welcome "+currentAdmin.getFname().replace("\"",""));
+        setOnClickListeners(view);
+
+        return view;
     }
 }

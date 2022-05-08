@@ -14,9 +14,23 @@
     <!--Admin Dashboard Bottom Nav Menu-->
     <string name="adminDBoardBottomNavMenuHome">Home</string>
     <string name="adminDBoardBottomNavMenuNotification">Notification</string>
-    <string name="adminDBoardBottomNavMenuCategories">Categories</string>
+    <string name="adminDBoardBottomNavMenuAdd">Add</string>
     <string name="adminDBoardBottomNavMenuSettings">Settings</string>
-
+    <!--Admin Dashboard Home Fragment-->
+    <string name="adminDashboardHomeFragmentSampleGreeting">Welcome</string>
+    <!--Admin Dashboard All Hotels-->
+    <string name="adminDashboardAllHotelsSampleName">Sample Hotel Name</string>
+    <!--Admin Dashboard Add Hotels-->
+    <string name="adminDashboardAddHotelHeading">Add A New Hotel</string>
+    <string name="adminDashboardAddHotelName">Hotel Name</string>
+    <string name="adminDashboardAddHotelAddress">Hotel Address</string>
+    <string name="adminDashboardAddHotelImageUrl">Preview Image URL</string>
+    <string name="adminDashboardAddHotelRating">Hotel Rating</string>
+    <string name="adminDashboardAddHotelAbout">Description</string>
+    <!--Admin Dashboard Add Hotels-->
+    <string name="adminDashboardUpdateHotelHeading">Update the Hotel</string>
+    <string name="adminDashboardUpdateHotelSubmitButton">Update</string>
+    <string name="adminDashboardUpdateHotelDeleteButton">Delete</string>
 
 
 </resources>

@@ -3,9 +3,9 @@
     <item android:id="@+id/admin_dashboard_bottom_nav_menu_home"
         android:title="@string/adminDBoardBottomNavMenuHome"
         android:icon="@drawable/ic_baseline_home_24"/>
-    <item android:id="@+id/admin_dashboard_bottom_nav_menu_categories"
-        android:title="@string/adminDBoardBottomNavMenuCategories"
-        android:icon="@drawable/ic_baseline_category_24"/>
+    <item android:id="@+id/admin_dashboard_bottom_nav_menu_add"
+        android:title="@string/adminDBoardBottomNavMenuAdd"
+        android:icon="@drawable/ic_baseline_add_24"/>
     <item android:id="@+id/admin_dashboard_bottom_nav_menu_notification"
         android:title="@string/adminDBoardBottomNavMenuNotification"
         android:icon="@drawable/ic_baseline_notifications_24"/>

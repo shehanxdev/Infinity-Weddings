@@ -3,12 +3,72 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="15dp"
     tools:context=".Fragments.AdminDashboardHomeFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Home" />
+       android:layout_marginTop="20dp"
+        android:layout_gravity="center"
+        >
+        <TextView
+            android:id="@+id/adminDashboardHomeGreeting"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:textAlignment="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/adminDashboardHomeFragmentSampleGreeting"
+            android:textSize="17sp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/raleway"/>
+        <ImageButton
+
+            android:id="@+id/admin_dashboard_homefragment_tile1"
+            app:layout_constraintEnd_toStartOf="@id/admin_dashboard_homefragment_tile2"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="@id/adminDashboardHomeGreeting"
+            app:layout_constraintTop_toBottomOf="@id/adminDashboardHomeGreeting"
+            android:layout_width="165dp"
+            android:layout_height="165dp"
+            android:src="@drawable/addhotel"
+            android:layout_marginRight="5dp"/>
+        <ImageButton
+            android:id="@+id/admin_dashboard_homefragment_tile2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/admin_dashboard_homefragment_tile1"
+            app:layout_constraintTop_toBottomOf="@id/adminDashboardHomeGreeting"
+            android:layout_width="165dp"
+            android:layout_height="165dp"
+            android:src="@drawable/updatehotel"
+            android:layout_marginLeft="5dp"/>
+
+        <ImageButton
+            android:layout_marginTop="10dp"
+            android:id="@+id/admin_dashboard_homefragment_tile3"
+            android:layout_width="165dp"
+            android:layout_height="165dp"
+            android:layout_marginRight="5dp"
+            android:src="@drawable/notificationicon"
+            app:layout_constraintEnd_toStartOf="@id/admin_dashboard_homefragment_tile4"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/admin_dashboard_homefragment_tile1" />
+
+        <ImageButton
+            android:layout_marginTop="10dp"
+            android:id="@+id/admin_dashboard_homefragment_tile4"
+           app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/admin_dashboard_homefragment_tile3"
+            app:layout_constraintTop_toBottomOf="@id/admin_dashboard_homefragment_tile2"
+            android:layout_width="165dp"
+            android:layout_height="165dp"
+            android:src="@drawable/ic_baseline_settings_24"
+            android:layout_marginLeft="5dp"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>
