@@ -31,8 +31,8 @@ public class AdminLoginActivity extends AppCompatActivity {
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                EditText usernameEdit=(EditText) findViewById(R.id.username);
-                EditText passwordEdit=(EditText) findViewById(R.id.password);
+                EditText usernameEdit=(EditText) findViewById(R.id.adminUsername);
+                EditText passwordEdit=(EditText) findViewById(R.id.adminPassword);
                 String username=usernameEdit.getText().toString();
                 String password=passwordEdit.getText().toString();
                 auth(username,password);

@@ -68,7 +68,7 @@ public class AdminDashboardHomeFragment extends Fragment {
         // Inflate the layout for this fragment
         View view= inflater.inflate(R.layout.fragment_admin_dashboard_home, container, false);
         greeting=(TextView) view.findViewById(R.id.adminDashboardHomeGreeting);
-        greeting.setText("Welcome "+currentAdmin.getFname().replace("\"",""));
+        greeting.setText("Welcome Shehan,");
         setOnClickListeners(view);
 
         return view;

@@ -43,36 +43,41 @@ public class AdminDashboardAddFragment extends Fragment {
         AdminHotelAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //Fetching user inputs
-                String hotelName=hotelNameField.getText().toString();
-                String hotelAddress=hotelAddressField.getText().toString();
-                int ratings=Integer.parseInt(hotelRatingField.getText().toString());
-                String hotelImageUrl=hotelImageUrlField.getText().toString();
-                String hotelAbout=hotelAboutField.getText().toString();
-                hotel newHotel=new hotel(hotelName,hotelAddress,ratings,hotelImageUrl,hotelAbout);
+                if(hotelNameField.getText().toString().equals("")||hotelAddressField.getText().toString().equals("")||hotelRatingField.getText().toString().equals("")||hotelImageUrlField.getText().toString().equals("")||hotelAboutField.getText().toString().equals("")){
+                    Toast.makeText(getContext(),"Please fill all the fields",Toast.LENGTH_SHORT).show();
+                }
+                else{
+                    //Fetching user inputs
+                    String hotelName=hotelNameField.getText().toString();
+                    String hotelAddress=hotelAddressField.getText().toString();
+                    int ratings=Integer.parseInt(hotelRatingField.getText().toString());
+                    String hotelImageUrl=hotelImageUrlField.getText().toString();
+                    String hotelAbout=hotelAboutField.getText().toString();
+                    hotel newHotel=new hotel(hotelName,hotelAddress,ratings,hotelImageUrl,hotelAbout);
 
-                //Generating a reference in the database
-                DatabaseReference databaseReference=FirebaseDatabase.getInstance().getReference("hotels");
-                databaseReference.child(hotelName).setValue(newHotel).addOnSuccessListener(new OnSuccessListener<Void>() {
-                    @Override
-                    public void onSuccess(Void unused) {
-                        Toast.makeText(getContext(),"New Hotel Is Added",Toast.LENGTH_SHORT).show();
-                        //Removing entered values after a successful addition
-                        hotelNameField.setText("");
-                        hotelAddressField.setText("");
-                        hotelRatingField.setText("");
-                        hotelImageUrlField.setText("");
-                        hotelAboutField.setText("");
 
-                    }
-                })
-                .addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        Toast.makeText(getContext(),"Error",Toast.LENGTH_SHORT).show();
-                    }
-                });
+                    //Generating a reference in the database
+                    DatabaseReference databaseReference=FirebaseDatabase.getInstance().getReference("hotels");
+                    databaseReference.child(hotelName).setValue(newHotel).addOnSuccessListener(new OnSuccessListener<Void>() {
+                        @Override
+                        public void onSuccess(Void unused) {
+                            Toast.makeText(getContext(),"New Hotel Is Added",Toast.LENGTH_SHORT).show();
+                            //Removing entered values after a successful addition
+                            hotelNameField.setText("");
+                            hotelAddressField.setText("");
+                            hotelRatingField.setText("");
+                            hotelImageUrlField.setText("");
+                            hotelAboutField.setText("");
 
+                        }
+                    })
+                            .addOnFailureListener(new OnFailureListener() {
+                                @Override
+                                public void onFailure(@NonNull Exception e) {
+                                    Toast.makeText(getContext(),"Error",Toast.LENGTH_SHORT).show();
+                                }
+                            });
+                }
             }
         });
     }

@@ -1,5 +1,6 @@
 package com.example.madinfinityweddings.Fragments;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -30,17 +31,24 @@ public class AdminDashboardUpdateFragment extends Fragment {
     String hotelName,hotelAddress,hotelImageUrl,hotelAbout;
     int hotelRank;
     hotel newHotel;
+    Context context;
+    AdminDashboardHomeFragment adminDashboardHomeFragment=new AdminDashboardHomeFragment();
 
 
     public AdminDashboardUpdateFragment(String hotelname){
         this.hotelname=hotelname;
+
+    }
+
+    @Override
+    public void onAttach(@NonNull Context context) {
+        super.onAttach(context);
+        this.context=context;
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-
     }
 
     @Override
@@ -86,17 +94,28 @@ public class AdminDashboardUpdateFragment extends Fragment {
     }
 
     public void setTextFields(View view){
+        System.out.println(this.hotelname+" hotel nam,");
+        System.out.println("inside setEtaxt");
        hotelNameField=(TextView) view.findViewById(R.id.adminDashboardUpdateHotelName);
        hotelAboutField=(TextView)view.findViewById(R.id.adminDashboardUpdateHotelAbout);
        hotelRankingField=(TextView)view.findViewById(R.id.adminDashboardUpdateHotelRating);
        hotelImageUrlField=(TextView)view.findViewById(R.id.adminDashboardUpdateHotelImageUrl);
        hotelAddressField=(TextView)view.findViewById(R.id.adminDashboardUpdateHotelAddress);
 
-       hotelNameField.setText(newHotel.getHotelName());
-       hotelAddressField.setText(newHotel.getAddress());
-       hotelRankingField.setText(Integer.toString(newHotel.getRatings()));
-       hotelImageUrlField.setText(newHotel.getAddress());
-       hotelAboutField.setText(newHotel.getAbout());
+      if(newHotel==null){
+          hotelNameField.setText("Deleted");
+          hotelAddressField.setText("Deleted");
+          hotelRankingField.setText("Deleted");
+          hotelImageUrlField.setText("Deleted");
+          hotelAboutField.setText("Deleted");
+      }
+      else{
+          hotelNameField.setText(newHotel.getHotelName());
+          hotelAddressField.setText(newHotel.getAddress());
+          hotelRankingField.setText(Integer.toString(newHotel.getRatings()));
+          hotelImageUrlField.setText(newHotel.getAddress());
+          hotelAboutField.setText(newHotel.getAbout());
+      }
 
     }
 
@@ -110,7 +129,7 @@ public class AdminDashboardUpdateFragment extends Fragment {
         //creating a new hotel object
         hotel updatedHotel=new hotel(hotelName,hotelAddress,hotelRank,hotelImageUrl,hotelAbout);
         //retrieving database connection suing newHotel object which holds current values of the hotel
-        DatabaseReference databaseReference=FirebaseDatabase.getInstance().getReference("hotels").child(newHotel.getHotelName());
+          DatabaseReference databaseReference=FirebaseDatabase.getInstance().getReference("hotels").child(newHotel.getHotelName());
         databaseReference.setValue(updatedHotel).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
             public void onSuccess(Void unused) {
@@ -131,8 +150,8 @@ public class AdminDashboardUpdateFragment extends Fragment {
         databaseReference.setValue(null).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
             public void onSuccess(Void unused) {
-                Intent intent=new Intent(getContext(),AdminDashboardAllHotelsFragment.class);
-                startActivity(intent);
+                Toast.makeText(getContext(),"Hotel Deleted Successfully",Toast.LENGTH_SHORT).show();
+                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.adminDashboardFragmentContainer,adminDashboardHomeFragment).commit();
             }
         });
     }

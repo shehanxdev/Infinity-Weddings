@@ -1,5 +1,6 @@
 package com.example.madinfinityweddings.Fragments;
 
+import android.content.Context;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -31,6 +32,7 @@ public class AdminDashboardAllHotelsFragment extends Fragment {
     //Attribute declaration
     ArrayList<hotel>hotelList=new ArrayList<hotel>();
     RecyclerView recyclerView;
+    Context context;
 
 ;
     public AdminDashboardAllHotelsFragment() {
@@ -38,8 +40,15 @@ public class AdminDashboardAllHotelsFragment extends Fragment {
     }
 
     @Override
+    public void onAttach(@NonNull Context context) {
+        super.onAttach(context);
+        this.context=context;
+    }
+
+    @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        System.out.println("inside onCreate");
     }
 
     private void fetchHotels(){
@@ -49,16 +58,24 @@ public class AdminDashboardAllHotelsFragment extends Fragment {
             @Override
             public void onDataChange(@NonNull DataSnapshot topSnapshot) {
                 //this for loop fetches all the child nodes in each iteration
+                hotelList.clear();
                 for(DataSnapshot snapshot: topSnapshot.getChildren()){
                     //A console print to make sure data is correct
                     System.out.println(snapshot.getValue());
                     hotel newHotel=snapshot.getValue(hotel.class);
                     //adding each fetched hotel to hotel arraylist
-                    hotelList.add(newHotel);
+                    if(hotelList.contains(newHotel)){
+                        System.out.println("Already Exists");
+                    }
+                    else{
+                        hotelList.add(newHotel);
+                    }
+
                 }
                 //attaching the recyclerview adapter only after all the data is fetched
                 attachRecyclerViewAdapter();
-                Toast.makeText(getContext(),"You have a total of "+hotelList.size()+" hotels",Toast.LENGTH_SHORT).show();
+                System.out.println(getContext());
+                Toast.makeText(context,"You have a total of "+hotelList.size()+" hotels",Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -79,6 +96,7 @@ public class AdminDashboardAllHotelsFragment extends Fragment {
         // Inflate the layout for this fragment
         View view= inflater.inflate(R.layout.fragment_admin_dashboard_all_hotels, container, false);
         recyclerView=view.findViewById(R.id.admin_dashboard_all_hotels_recyclerview);
+        System.out.println("inside onCreateView");
         fetchHotels();
         return view;
 

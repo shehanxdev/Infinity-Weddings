@@ -22,9 +22,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/adminDashboardHomeFragmentSampleGreeting"
-            android:textSize="17sp"
+            android:textSize="23sp"
+            android:textFontWeight="900"
             android:textColor="@color/black"
-            android:fontFamily="@font/raleway"/>
+            android:fontFamily="@font/raleway"
+            android:layout_marginBottom="20dp"/>
         <ImageButton
 
             android:id="@+id/admin_dashboard_homefragment_tile1"
@@ -35,7 +37,8 @@
             android:layout_width="165dp"
             android:layout_height="165dp"
             android:src="@drawable/addhotel"
-            android:layout_marginRight="5dp"/>
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="30dp"/>
         <ImageButton
             android:id="@+id/admin_dashboard_homefragment_tile2"
             app:layout_constraintEnd_toEndOf="parent"
@@ -44,7 +47,8 @@
             android:layout_width="165dp"
             android:layout_height="165dp"
             android:src="@drawable/updatehotel"
-            android:layout_marginLeft="5dp"/>
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="30dp"/>
 
         <ImageButton
             android:layout_marginTop="10dp"

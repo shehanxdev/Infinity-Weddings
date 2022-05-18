@@ -31,6 +31,11 @@
     <string name="adminDashboardUpdateHotelHeading">Update the Hotel</string>
     <string name="adminDashboardUpdateHotelSubmitButton">Update</string>
     <string name="adminDashboardUpdateHotelDeleteButton">Delete</string>
+    <!--Admin Dashboard Notifications -->
+    <string name="adminNotificationOne">You have a meeting at 7PM today</string>
+    <string name="adminNotificationTwo">A request for a booking has been received</string>
+    <string name="adminNotificationThree">Please check the privacy policy of your firebase realtime database</string>
+    <string name="adminNotificationFour">Google has new recommendations for you</string>
 
 
 </resources>

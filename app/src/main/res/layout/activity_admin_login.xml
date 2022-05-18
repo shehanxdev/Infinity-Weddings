@@ -1,57 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="300dp"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_gravity="center"
-    android:orientation="vertical">
+    android:layout_gravity="center_vertical"
+    android:gravity="center_vertical"
 
+    >
     <ImageView
-        android:id="@+id/adminImage"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="120dp"
-        app:srcCompat="@drawable/admin" />
+        android:layout_width="fill_parent"
+        android:layout_height="90dp"
+        android:padding="0dp"
+        android:layout_margin="0dp"
+        android:src="@drawable/wave"
+        android:scaleType="fitXY"/>
+<com.google.android.material.card.MaterialCardView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:elevation="30dp"
+    android:layout_gravity="center"
+    app:cardElevation="30dp"
+    app:cardCornerRadius="10dp"
+    >
 
-    <EditText
-        android:id="@+id/username"
-        android:layout_width="match_parent"
-        android:layout_marginTop="40dp"
-        android:layout_height="50dp"
-        android:hint="@string/loginHintUsername"
-
-    />
-    <EditText
-        android:id="@+id/password"
-        android:inputType="textPassword"
-        android:layout_width="match_parent"
-        android:layout_marginTop="40dp"
-        android:layout_height="50dp"
-        android:hint="@string/loginHintPassword"
-        />
-
-    <Button
-        android:id="@+id/loginPageLogin"
-        android:layout_width="90dp"
+    <LinearLayout
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="@string/login"
-        android:backgroundTint="@color/pink"
-        android:textColor="@color/white"
-        android:layout_marginTop="10dp"
+        android:orientation="vertical"
+        android:layout_margin="10dp">
+        <ImageView
+            android:id="@+id/adminImage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            app:srcCompat="@drawable/admin" />
 
-        />
+        <EditText
+            android:id="@+id/adminUsername"
+            android:layout_width="match_parent"
+            android:layout_marginTop="40dp"
+            android:layout_height="50dp"
+            android:hint="@string/loginHintUsername"
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/loginWarningMessage"
-        android:gravity="center"
-        android:textColor="@color/pink"
-        android:fontFamily="@font/raleway"
-        android:layout_marginTop="30dp"
-        android:textSize="12sp"/>
+            />
+        <EditText
+            android:id="@+id/adminPassword"
+            android:inputType="textPassword"
+            android:layout_width="match_parent"
+            android:layout_marginTop="40dp"
+            android:layout_height="50dp"
+            android:hint="@string/loginHintPassword"
+            />
 
+        <Button
+            android:id="@+id/loginPageLogin"
+            android:layout_width="90dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/login"
+            android:backgroundTint="@color/pink"
+            android:textColor="@color/white"
+            android:layout_marginTop="10dp"
 
-</LinearLayout>
+            />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/loginWarningMessage"
+            android:gravity="center"
+            android:textColor="@color/pink"
+            android:fontFamily="@font/raleway"
+            android:layout_marginTop="30dp"
+            android:textSize="12sp"/>
+
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>
+
+</FrameLayout>
