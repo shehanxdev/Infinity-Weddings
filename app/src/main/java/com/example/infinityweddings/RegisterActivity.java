@@ -206,7 +206,7 @@ public class RegisterActivity extends AppCompatActivity {
 
                                         Toast.makeText(RegisterActivity.this,"Registered Successfully!. Please verify your Email", Toast.LENGTH_LONG).show();
                                          //open user profile after successful registration
-                                    Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
+                                    Intent intent = new Intent(RegisterActivity.this, UserProfileActivity.class);
 
                                     //to prevent User from returning back to register Activity on pressing back button after registration
                                     intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
@@ -220,8 +220,9 @@ public class RegisterActivity extends AppCompatActivity {
                                 }
                             });
 
-                            //EXCEPTION HANDLING
-                        }else {
+
+                        } //EXCEPTION HANDLING
+                        else {
                             try {
                                 throw  task.getException();
                             }catch (FirebaseAuthWeakPasswordException e){

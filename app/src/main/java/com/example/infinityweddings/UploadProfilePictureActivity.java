@@ -175,21 +175,23 @@ public class UploadProfilePictureActivity extends AppCompatActivity {
             progressBar.setVisibility(View.VISIBLE);
             finish();
             overridePendingTransition(0, 0);
-        } /*else if(id == R.id.menu_update_profile){
-            Intent intent = new Intent(UserProfileActivity.this, UpdateProfileActivity.class);
+        } else if(id == R.id.menu_update_profile){
+            Intent intent = new Intent(UploadProfilePictureActivity.this, UpdateProfileActivity.class);
             startActivity(intent);
+            finish();
         }else if (id== R.id.menu_update_email){
-            Intent intent = new Intent(UserProfileActivity.this, UpdateEmailActivity.class);
+            Intent intent = new Intent(UploadProfilePictureActivity.this, UpdateEmailActivity.class);
             startActivity(intent);
         }else if(id == R.id.menu_settings){
-            Toast.makeText(UserProfileActivity.this, "menu_settings!", Toast.LENGTH_LONG).show();
+            Toast.makeText(UploadProfilePictureActivity.this, "menu_settings!", Toast.LENGTH_LONG).show();
         }else if (id == R.id.menu_change_password){
-            Intent intent = new Intent(UserProfileActivity.this, ChangePasswordActivity.class);
+            Intent intent = new Intent(UploadProfilePictureActivity.this, ChangePasswordActivity.class);
             startActivity(intent);
         }else if (id == R.id.menu_delete_profile){
-            Intent intent = new Intent(UserProfileActivity.this, DeleteProfileActivity.class);
+            Intent intent = new Intent(UploadProfilePictureActivity.this, DeleteProfileActivity.class);
             startActivity(intent);
-        } */else if (id == R.id.menu_logout){
+            finish();
+        } else if (id == R.id.menu_logout){
             authProfile.signOut();
             Toast.makeText(UploadProfilePictureActivity.this, "Logged out!", Toast.LENGTH_LONG).show();
             Intent intent = new Intent(UploadProfilePictureActivity.this, MainActivity.class);

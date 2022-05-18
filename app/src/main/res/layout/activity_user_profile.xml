@@ -33,6 +33,8 @@
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="5dp"
                 android:hint="Loading..."
+                android:textSize="16dp"
+                android:textStyle="italic"
                 android:textAppearance="@style/TextAppearance.AppCompat.Caption"
                 android:textColor="@color/black" />
 
@@ -41,18 +43,17 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="15dp"
-            android:layout_margin="15dp"
+            android:padding="20dp"
+            android:layout_margin="5dp"
             android:background="@color/white">
 
  <!--- Name -->
 
             <ImageView
+                android:id="@+id/ic_profile"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
-                android:id="@+id/ic_profile"
-                android:background="@drawable/ic_profile"
-                />
+                android:background="@drawable/ic_profile" />
 
             <TextView
                 android:id="@+id/textView_show_full_name"
@@ -177,14 +178,25 @@
                 />
 
 
-
-
-
         </RelativeLayout>
 
 
 
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="20dp"
+            android:layout_margin="5dp"
+            android:background="@color/white">
 
+            <Button
+                android:id="@+id/btnGoToProd"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Go To Product" />
+
+
+        </FrameLayout>
 
 
     </LinearLayout>

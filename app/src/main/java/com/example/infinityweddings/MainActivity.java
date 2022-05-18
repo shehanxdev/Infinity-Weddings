@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         //set the title
-      getSupportActionBar().setTitle("Infinity Weddings");
+      getSupportActionBar().hide();
 
 
        //open Login Activity

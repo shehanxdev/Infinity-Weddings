@@ -1,6 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-             android:layout_width="match_parent"
-             android:layout_height="match_parent">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="20dp"
+    android:layout_marginEnd="15dp"
+    android:orientation="vertical">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/image_preview1"
+            android:layout_width="200dp"
+            android:layout_height="150dp"
+            android:layout_below="@id/category_heading"
+            android:layout_marginTop="40dp"
+            android:src="@drawable/lightning" />
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/category_heading"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="40dp"
+            android:layout_toRightOf="@id/image_preview1"
+            android:fontFamily="@font/raleway"
+            android:text="Name: Amila Lightning"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/category_heading"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="70dp"
+            android:layout_toRightOf="@id/image_preview1"
+            android:fontFamily="@font/raleway"
+            android:text="Price packages:\nRs.10000"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/category_heading"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="110dp"
+            android:layout_toRightOf="@id/image_preview1"
+            android:fontFamily="@font/raleway"
+            android:text="QTY : 1"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+
+        <ImageButton
+            android:id="@+id/edit_button9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="6dp"
+            android:layout_marginTop="140dp"
+            android:layout_toRightOf="@id/image_preview1"
+            android:src="@drawable/ic_baseline_add_24"
+            android:textColor="#0000ff" />
+
+        <ImageButton
+            android:id="@+id/edit_button11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="54dp"
+            android:layout_marginTop="140dp"
+            android:layout_toRightOf="@id/image_preview1"
+            android:src="@drawable/ic_baseline_remove_24"
+            android:textColor="#0000ff" />
+
+        <ImageButton
+            android:id="@+id/btnDelete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="109dp"
+            android:layout_marginTop="140dp"
+            android:layout_toRightOf="@id/image_preview1"
+            android:src="@drawable/ic_baseline_delete_24" />
+
+    </RelativeLayout>
+
+</LinearLayout>

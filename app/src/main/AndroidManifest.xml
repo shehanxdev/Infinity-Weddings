@@ -10,6 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.InfinityWeddings">
         <activity
+            android:name=".ChangePasswordActivity"
+            android:exported="false" />
+        <activity
+            android:name=".UpdateEmailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".UpdateProfileActivity"
+            android:exported="false" />
+        <activity
             android:name=".DeleteProfileActivity"
             android:exported="false" />
         <activity
@@ -27,9 +36,22 @@
         <activity
             android:name=".RegisterActivity"
             android:exported="false" />
+
         <activity
-            android:name=".MainActivity"
-            android:exported="true">
+            android:name=".UserItemViewActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".UserCartActivity"
+            android:exported="false" />
+
+        <activity android:name=".MainActivity" />
+
+        <activity
+            android:name=".SplashScreen"
+            android:exported="true"
+            android:theme="@style/SplashScreen">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

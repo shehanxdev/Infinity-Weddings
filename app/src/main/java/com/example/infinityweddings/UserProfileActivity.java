@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -22,17 +23,19 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 public class UserProfileActivity extends AppCompatActivity {
-         private TextView  textViewWelcome, textViewFullName, textViewEmail, textViewDoB, textViewMobile;
-         private ProgressBar progressBar;
-         private String fullName, email, doB , mobile;
-         private ImageView imageView;
-         private FirebaseAuth authProfile;
+    private TextView textViewWelcome, textViewFullName, textViewEmail, textViewDoB, textViewMobile;
+    private ProgressBar progressBar;
+    private String fullName, email, doB, mobile;
+    private ImageView imageView;
+    private FirebaseAuth authProfile;
+    private Button btnGoToProd;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_profile);
 
-       getSupportActionBar().setTitle("Profile");
+        getSupportActionBar().setTitle("Profile");
 
         textViewWelcome = findViewById(R.id.textView_show_welcome);
         textViewFullName = findViewById(R.id.textView_show_full_name);
@@ -40,7 +43,7 @@ public class UserProfileActivity extends AppCompatActivity {
         textViewDoB = findViewById(R.id.textView_show_dob);
         textViewMobile = findViewById(R.id.textView_show_mobile);
         progressBar = findViewById(R.id.progressBar);
-
+        btnGoToProd = findViewById(R.id.btnGoToProd);
 
         //Set onClick listener on ImageView to open UploadProfile Picture
         imageView = findViewById(R.id.imageView_profile_dp);
@@ -57,13 +60,19 @@ public class UserProfileActivity extends AppCompatActivity {
         FirebaseUser firebaseUser = authProfile.getCurrentUser();
 
 
-        if ((firebaseUser == null)){
+        if ((firebaseUser == null)) {
             Toast.makeText(UserProfileActivity.this, "Something went wrong!. User details are not available at the moment. ", Toast.LENGTH_SHORT).show();
-        }else {
+        } else {
             progressBar.setVisibility(View.GONE);
             showUserProfile(firebaseUser);
         }
 
+
+
+        btnGoToProd.setOnClickListener(view -> {
+            Intent intent = new Intent(UserProfileActivity.this, UserItemViewActivity.class);
+            startActivity(intent);
+        });
     }
 
 
@@ -76,14 +85,14 @@ public class UserProfileActivity extends AppCompatActivity {
         referenceProfile.child(userID).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                ReadWriteUserDetails readUserDetails =snapshot.getValue(ReadWriteUserDetails.class);
-                if (readUserDetails != null){
+                ReadWriteUserDetails readUserDetails = snapshot.getValue(ReadWriteUserDetails.class);
+                if (readUserDetails != null) {
                     fullName = firebaseUser.getDisplayName();
                     email = firebaseUser.getEmail();
                     doB = readUserDetails.doB;
                     mobile = readUserDetails.mobile;
 
-                    textViewWelcome.setText("Welcome, "  + fullName );
+                    textViewWelcome.setText("Welcome, " + fullName);
                     textViewFullName.setText(fullName);
                     textViewEmail.setText(email);
                     textViewDoB.setText(doB);
@@ -108,32 +117,34 @@ public class UserProfileActivity extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.common_menu, menu);
         return super.onCreateOptionsMenu(menu);
     }
-     //When any menu item is selected
+
+    //When any menu item is selected
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
 
-        if (id == R.id.menu_refresh){
+        if (id == R.id.menu_refresh) {
             //Refresh Activity
             startActivity(getIntent());
             progressBar.setVisibility(View.VISIBLE);
             finish();
             overridePendingTransition(0, 0);
-        } /*else if(id == R.id.menu_update_profile){
+        } else if (id == R.id.menu_update_profile) {
             Intent intent = new Intent(UserProfileActivity.this, UpdateProfileActivity.class);
             startActivity(intent);
-        }else if (id== R.id.menu_update_email){
+        } else if (id == R.id.menu_update_email) {
             Intent intent = new Intent(UserProfileActivity.this, UpdateEmailActivity.class);
             startActivity(intent);
-        }else if(id == R.id.menu_settings){
+        } else if (id == R.id.menu_settings) {
             Toast.makeText(UserProfileActivity.this, "menu_settings!", Toast.LENGTH_LONG).show();
-        }else if (id == R.id.menu_change_password){
+        } else if (id == R.id.menu_change_password) {
             Intent intent = new Intent(UserProfileActivity.this, ChangePasswordActivity.class);
             startActivity(intent);
-        }else if (id == R.id.menu_delete_profile){
+        } else if (id == R.id.menu_delete_profile) {
             Intent intent = new Intent(UserProfileActivity.this, DeleteProfileActivity.class);
             startActivity(intent);
-        } */else if (id == R.id.menu_logout){
+            finish();
+        } else if (id == R.id.menu_logout) {
             authProfile.signOut();
             Toast.makeText(UserProfileActivity.this, "Logged out!", Toast.LENGTH_LONG).show();
             Intent intent = new Intent(UserProfileActivity.this, MainActivity.class);
@@ -143,7 +154,7 @@ public class UserProfileActivity extends AppCompatActivity {
             startActivity(intent);
             finish(); //close UsrProfile
 
-        }else{
+        } else {
             Toast.makeText(UserProfileActivity.this, "Something went Wrong!", Toast.LENGTH_LONG).show();
         }
         return super.onOptionsItemSelected(item);
