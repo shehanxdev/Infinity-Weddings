@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="#f29697">
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_baseline_format_list_bulleted_24"/>
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_baseline_person_24"
+            android:layout_marginLeft="310dp"/>
+    </LinearLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/category_heading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="30dp"
+                android:fontFamily="@font/raleway"
+                android:text="Cart"
+                android:textColor="@color/black"
+                android:textSize="30sp" />
+
+            <ImageView
+                android:id="@+id/image_previewg"
+                android:layout_width="200dp"
+                android:layout_height="150dp"
+                android:layout_below="@id/category_heading"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="40dp"
+                android:src="@drawable/lightning" />
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Name: Amila Lightning"
+                android:layout_below="@id/category_heading"
+                android:layout_toRightOf="@id/image_preview1"
+                android:layout_marginTop="40dp"
+                android:layout_marginLeft="10dp"
+                android:textSize="15sp"
+                android:fontFamily="@font/raleway"
+                android:textColor="@color/black"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Price packages:\nRs.10000\nRs.6000"
+                android:textSize="15sp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/raleway"
+                android:layout_below="@id/category_heading"
+                android:layout_toRightOf="@id/image_preview1"
+                android:layout_marginTop="70dp"
+                android:layout_marginLeft="10dp"/>
+
+            <TextView
+                android:id="@+id/edit_button5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/category_heading"
+                android:text="Book"
+                android:textColor="#0000ff"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="150dp"
+                android:layout_toRightOf="@id/image_preview1"
+                android:src="@drawable/ic_baseline_edit_24" />
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_baseline_bookmark_border_24"
+                android:layout_below="@id/category_heading"
+                android:layout_toRightOf="@id/image_preview1"
+                android:layout_marginLeft="70dp"
+                android:layout_marginTop="140dp"/>
+            <ImageView
+                android:id="@+id/image_preview2"
+                android:layout_width="200dp"
+                android:layout_height="150dp"
+                android:layout_below="@id/category_heading"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="200dp"
+                android:src="@drawable/lightning" />
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Name: Amila Lightning"
+                android:layout_below="@id/category_heading"
+                android:layout_toRightOf="@id/image_preview1"
+                android:layout_marginTop="210dp"
+                android:layout_marginLeft="10dp"
+                android:textSize="15sp"
+                android:fontFamily="@font/raleway"
+                android:textColor="@color/black"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Price packages:\nRs.10000\nRs.6000"
+                android:textSize="15sp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/raleway"
+                android:layout_below="@id/category_heading"
+                android:layout_toRightOf="@id/image_preview1"
+                android:layout_marginTop="240dp"
+                android:layout_marginLeft="10dp"/>
+
+            <ImageButton
+                android:id="@+id/edit_button6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/category_heading"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="305dp"
+                android:layout_toRightOf="@id/image_preview1"
+                android:src="@drawable/ic_baseline_edit_24"
+                android:text="Book"
+                android:textColor="#0000ff" />
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_baseline_delete_24"
+                android:layout_below="@id/category_heading"
+                android:layout_toRightOf="@id/image_preview1"
+                android:layout_marginLeft="70dp"
+                android:layout_marginTop="305dp"/>
+            <ImageView
+                android:id="@+id/image_preview1"
+                android:layout_width="200dp"
+                android:layout_height="150dp"
+                android:layout_below="@id/category_heading"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="40dp"
+                android:src="@drawable/lightning" />
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/category_heading"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="40dp"
+                android:layout_toRightOf="@id/image_preview1"
+                android:fontFamily="@font/raleway"
+                android:text="Name: Amila Lightning"
+                android:textColor="@color/black"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/category_heading"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="70dp"
+                android:layout_toRightOf="@id/image_preview1"
+                android:fontFamily="@font/raleway"
+                android:text="Price packages:\nRs.10000\nRs.6000"
+                android:textColor="@color/black"
+                android:textSize="15sp" />
+
+            <ImageButton
+                android:id="@+id/edit_button9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/category_heading"
+                android:layout_marginLeft="7dp"
+                android:layout_marginTop="140dp"
+                android:layout_toRightOf="@id/image_preview1"
+                android:src="@drawable/ic_baseline_edit_24"
+                android:textColor="#0000ff" />
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_baseline_delete_24"
+                android:layout_below="@id/category_heading"
+                android:layout_toRightOf="@id/image_preview1"
+                android:layout_marginLeft="70dp"
+                android:layout_marginTop="140dp"/>
+
+            <ImageView
+                android:id="@+id/image_preview3"
+                android:layout_width="200dp"
+                android:layout_height="150dp"
+                android:layout_below="@id/category_heading"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="360dp"
+                android:src="@drawable/lightning" />
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Name: Amila Lightning"
+                android:layout_below="@id/category_heading"
+                android:layout_toRightOf="@id/image_preview1"
+                android:layout_marginTop="380dp"
+                android:layout_marginLeft="10dp"
+                android:textSize="15sp"
+                android:fontFamily="@font/raleway"
+                android:textColor="@color/black"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Price packages:\nRs.10000\nRs.6000"
+                android:textSize="15sp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/raleway"
+                android:layout_below="@id/category_heading"
+                android:layout_toRightOf="@id/image_preview1"
+                android:layout_marginTop="410dp"
+                android:layout_marginLeft="10dp"/>
+
+            <ImageButton
+                android:id="@+id/edit_button7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/category_heading"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="465dp"
+                android:layout_toRightOf="@id/image_preview1"
+                android:src="@drawable/ic_baseline_edit_24"
+                android:textColor="#0000ff" />
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_baseline_delete_24"
+                android:layout_below="@id/category_heading"
+                android:layout_toRightOf="@id/image_preview1"
+                android:layout_marginLeft="70dp"
+                android:layout_marginTop="465dp"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/edit_button7"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:backgroundTint="#0000ff"
+                android:padding="10dp"
+                android:text="Request quote"
+                android:textColor="@color/white" />
+
+        </RelativeLayout>
+    </ScrollView>
+</LinearLayout>
